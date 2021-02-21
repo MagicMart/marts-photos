@@ -1,6 +1,6 @@
 export default {
   name: 'content',
-  title: 'Content',
+  title: 'Description',
   type: 'array',
   of: [
     {

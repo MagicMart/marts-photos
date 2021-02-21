@@ -25,9 +25,10 @@ export default {
       validation: (Rule) => Rule.required(),
     },
     {
-      name: 'description',
-      title: 'Description',
-      type: 'content',
+      title: 'Text',
+      name: 'text',
+      type: 'array',
+      of: [{ type: 'block' }],
       validation: (Rule) => Rule.required(),
     },
   ],
