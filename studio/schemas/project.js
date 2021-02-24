@@ -26,10 +26,17 @@ export default {
       validation: (Rule) => Rule.required(),
     },
     {
+      name: 'photo',
+      title: 'First Photo',
+      type: 'reference',
+      to: { type: 'photo' },
+      validation: (Rule) => Rule.required(),
+    },
+    {
       name: 'photos',
       title: 'Project photos',
       type: 'array',
-      of: [{ type: 'reference', to: [{ type: 'photo' }] }],
+      of: [{ type: 'reference', to: { type: 'photo' } }],
     },
   ],
 };
