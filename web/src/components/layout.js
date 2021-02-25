@@ -13,6 +13,7 @@ import Header from './header'
 import 'normalize.css'
 import GlobalStyles from '../styles/Globalstyles'
 import styled from 'styled-components'
+import Typography from '../styles/Typography'
 
 const Container = styled.div`
   max-width: 980px;
@@ -33,6 +34,7 @@ const Layout = ({ children }) => {
   return (
     <>
       <GlobalStyles />
+      <Typography />
       <Header siteTitle={data.site.siteMetadata?.title || `Title`} />
       <Container>
         <main>{children}</main>
