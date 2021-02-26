@@ -4,14 +4,21 @@ import styled from 'styled-components'
 import Nav from './nav'
 
 const StyledHeader = styled.header`
-  display: flexbox;
+  margin-bottom: 3rem;
+  display: grid;
+  grid-template-columns: 1fr 3fr;
   background: var(--red);
+
+  nav {
+    background: yellow;
+  }
 `
 
 const Header = ({ siteTitle }) => (
   <StyledHeader>
     <h1>
       <span>Martin</span>
+      <br />
       <span>Tudor</span>
     </h1>
     <Nav />
