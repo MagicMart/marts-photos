@@ -75,7 +75,6 @@ const GlobalStyles = createGlobalStyle`
     position: relative;
     display: inline-block;
     }
-
 `
 
 export default GlobalStyles

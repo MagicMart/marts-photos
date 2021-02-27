@@ -8,7 +8,7 @@ export default function Home({ data }) {
 
   return (
     <>
-      <h1>Home page</h1>
+      <h2>Home page</h2>
       <pre>{JSON.stringify(nodes, null, 4)}</pre>
       <hr />
       <ProjectList projects={nodes} />
