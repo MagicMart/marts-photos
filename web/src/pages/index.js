@@ -9,7 +9,6 @@ export default function Home({ data }) {
   return (
     <>
       <h2>Home page</h2>
-      <pre>{JSON.stringify(nodes, null, 4)}</pre>
       <hr />
       <ProjectList projects={nodes} />
     </>

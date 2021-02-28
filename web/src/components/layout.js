@@ -18,6 +18,7 @@ import Typography from '../styles/Typography'
 const Container = styled.div`
   max-width: 980px;
   margin: 0 auto;
+  padding: 5px;
 `
 
 const Layout = ({ children }) => {
