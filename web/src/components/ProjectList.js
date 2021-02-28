@@ -35,7 +35,7 @@ function SingleProject({ projects }) {
         const slug = project.slug.current
         return (
           <SingleProjectStyles key={id}>
-            <Link className="mark" to={`/projects/${slug}`}>
+            <Link className="mark" to={`/project/${slug}`}>
               <h2>{name}</h2>
             </Link>
             <Img fluid={fluid} />
