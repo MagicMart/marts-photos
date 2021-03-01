@@ -6,11 +6,12 @@ import styled from 'styled-components'
 const ProjectListStyles = styled.div`
   display: grid;
   --size: 140px;
-  grid-template-columns: 1fr 1fr;
+  grid-template-columns: var(--size) var(--size);
   grid-gap: 1rem;
+  justify-content: space-evenly;
   @media (min-width: 600px) {
     --size: 250px;
-    grid-template-columns: repeat(auto-fill, minmax(var(--size), 1fr));
+    grid-template-columns: repeat(auto-fill, var(--size));
     grid-gap: 4rem;
   }
 `

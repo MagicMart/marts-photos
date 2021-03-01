@@ -6,23 +6,34 @@ import styled from 'styled-components'
 const PhotoArrayStyles = styled.div`
   display: grid;
   grid-template-columns: repeat(auto-fill, 100px);
-  grid-gap: 1rem;
 `
 
 const SinglePhotoStyles = styled.div`
   display: grid;
   grid-template-rows: 100px;
+  border: 1px solid green;
+`
+
+const SelectedStyles = styled.div`
+  max-width: 300px;
+  height: 300px;
 `
 
 export default function SingleProject({ data }) {
+  const [selected, setSelected] = React.useState(data.project.photos[0])
   return (
-    <PhotoArrayStyles>
-      {data.project.photos.map((photo) => (
-        <SinglePhotoStyles>
-          <Img fluid={photo.image.asset.fluid} />
-        </SinglePhotoStyles>
-      ))}
-    </PhotoArrayStyles>
+    <>
+      <SelectedStyles>
+        <Img fluid={selected.image.asset.fluid} />
+      </SelectedStyles>
+      <PhotoArrayStyles>
+        {data.project.photos.map((photo) => (
+          <SinglePhotoStyles onClick={() => setSelected(photo)}>
+            <Img fluid={photo.image.asset.fluid} />
+          </SinglePhotoStyles>
+        ))}
+      </PhotoArrayStyles>
+    </>
   )
 }
 
