@@ -8,8 +8,6 @@ export default function Home({ data }) {
 
   return (
     <>
-      <h2>Home page</h2>
-      <hr />
       <ProjectList projects={nodes} />
     </>
   )
