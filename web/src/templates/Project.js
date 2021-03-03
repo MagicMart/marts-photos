@@ -16,11 +16,17 @@ const PhotoArrayStyles = styled.div`
 `
 
 const SinglePhotoStyles = styled.div`
+  position: relative;
   display: grid;
   grid-template-rows: 100px;
   border: 1px solid green;
   .layer {
-    filter: opacity(0.5);
+    position: absolute;
+    background-color: rgba(248, 247, 216, 0.7);
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
   }
 `
 
@@ -41,10 +47,8 @@ export default function SingleProject({ data }) {
       <PhotoArrayStyles>
         {data.project.photos.map((photo) => (
           <SinglePhotoStyles key={photo.id} onClick={() => setSelected(photo)}>
-            <Img
-              className={photo.id !== selected.id && 'layer'}
-              fluid={photo.image.asset.fluid}
-            />
+            <Img fluid={photo.image.asset.fluid} />
+            {photo.id !== selected.id && <div className="layer"></div>}
           </SinglePhotoStyles>
         ))}
       </PhotoArrayStyles>
