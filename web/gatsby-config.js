@@ -1,3 +1,5 @@
+require('dotenv').config()
+
 module.exports = {
   siteMetadata: {
     title: `Martin Tudor`,
@@ -36,7 +38,7 @@ module.exports = {
         watchMode: true,
         // a token with read permissions is required
         // if you have a private dataset
-        // token: process.env.MY_SANITY_TOKEN,
+        token: process.env.SANITY_TOKEN,
       },
     },
 

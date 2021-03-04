@@ -8,6 +8,9 @@ const ProjectStyles = styled.div`
   grid-template-rows: 1fr auto;
   grid-row-gap: 1rem;
   justify-content: center;
+  h2 {
+    font-size: 1.8rem;
+  }
 `
 
 const PhotoArrayStyles = styled.div`
@@ -42,6 +45,7 @@ export default function SingleProject({ data }) {
   return (
     <ProjectStyles>
       <SelectedStyles>
+        <h2 className="mark">{data.project.name}</h2>
         <Img fluid={selected.image.asset.fluid} />
       </SelectedStyles>
       <PhotoArrayStyles>
@@ -59,6 +63,7 @@ export default function SingleProject({ data }) {
 export const query = graphql`
   query($slug: String!) {
     project: sanityProject(slug: { current: { eq: $slug } }) {
+      name
       photos {
         name
         id

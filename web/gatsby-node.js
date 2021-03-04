@@ -3,7 +3,6 @@
  *
  * See: https://www.gatsbyjs.com/docs/node-apis/
  */
-
 const path = require('path')
 
 async function turnProjectsIntoPages({ graphql, actions }) {
