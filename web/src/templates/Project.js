@@ -46,12 +46,12 @@ export default function SingleProject({ data }) {
     <ProjectStyles>
       <SelectedStyles>
         <h2 className="mark">{data.project.name}</h2>
-        <Img fluid={selected.image.asset.fluid} />
+        <Img fluid={selected.image.asset.fluid} alt={selected.description} />
       </SelectedStyles>
       <PhotoArrayStyles>
         {data.project.photos.map((photo) => (
           <SinglePhotoStyles key={photo.id} onClick={() => setSelected(photo)}>
-            <Img fluid={photo.image.asset.fluid} />
+            <Img fluid={photo.image.asset.fluid} alt={photo.description} />
             {photo.id !== selected.id && <div className="layer"></div>}
           </SinglePhotoStyles>
         ))}
@@ -67,6 +67,7 @@ export const query = graphql`
       photos {
         name
         id
+        description
         image {
           asset {
             fluid(maxWidth: 800) {
