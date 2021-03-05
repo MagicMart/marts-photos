@@ -39,7 +39,10 @@ function SingleProject({ projects }) {
             <Link className="mark" to={`/project/${slug}`}>
               <h2>{name}</h2>
             </Link>
-            <Img fluid={fluid} />
+            <Img
+              fluid={fluid}
+              alt={`Project: ${project.name}. Cover photo: ${project.photo.description}`}
+            />
           </SingleProjectStyles>
         )
       })}

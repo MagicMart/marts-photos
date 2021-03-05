@@ -24,6 +24,7 @@ export const query = graphql`
         }
         photo {
           name
+          description
           image {
             asset {
               fluid(maxWidth: 400) {

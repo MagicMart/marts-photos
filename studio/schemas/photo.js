@@ -36,9 +36,8 @@ export default {
     },
     {
       title: 'Description',
-      name: 'text',
-      type: 'array',
-      of: [{ type: 'block' }],
+      name: 'description',
+      type: 'text',
       validation: (Rule) => Rule.required(),
     },
   ],
