@@ -11,7 +11,7 @@ const NavStyles = styled.nav`
     margin: 0;
     padding: 0;
     display: grid;
-    grid-template-rows: repeat(6, auto);
+    grid-template-rows: repeat(5, auto);
     gap: 1rem;
   }
   @media (min-width: 600px) {
@@ -20,7 +20,7 @@ const NavStyles = styled.nav`
     }
     ul {
       grid-template-rows: 1fr;
-      grid-template-columns: repeat(5, auto);
+      grid-template-columns: repeat(4, auto);
     }
     button {
       display: none;
@@ -40,9 +40,6 @@ export default function Nav() {
           </li>
           <li>
             <Link to="/">Projects</Link>
-          </li>
-          <li>
-            <Link to="/blog">Blog</Link>
           </li>
           <li>
             <Link to="/about">About</Link>
