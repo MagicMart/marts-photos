@@ -2,6 +2,7 @@ import { graphql } from 'gatsby'
 import Img from 'gatsby-image'
 import React from 'react'
 import styled from 'styled-components'
+import SEO from '../components/seo'
 
 const ProjectStyles = styled.div`
   display: grid;
@@ -43,20 +44,26 @@ const SelectedStyles = styled.div`
 export default function SingleProject({ data }) {
   const [selected, setSelected] = React.useState(data.project.photos[0])
   return (
-    <ProjectStyles>
-      <SelectedStyles>
-        <h2 className="mark">{data.project.name}</h2>
-        <Img fluid={selected.image.asset.fluid} alt={selected.description} />
-      </SelectedStyles>
-      <PhotoArrayStyles>
-        {data.project.photos.map((photo) => (
-          <SinglePhotoStyles key={photo.id} onClick={() => setSelected(photo)}>
-            <Img fluid={photo.image.asset.fluid} alt={photo.description} />
-            {photo.id !== selected.id && <div className="layer"></div>}
-          </SinglePhotoStyles>
-        ))}
-      </PhotoArrayStyles>
-    </ProjectStyles>
+    <>
+      <SEO title={data.project.name} />
+      <ProjectStyles>
+        <SelectedStyles>
+          <h2 className="mark">{data.project.name}</h2>
+          <Img fluid={selected.image.asset.fluid} alt={selected.description} />
+        </SelectedStyles>
+        <PhotoArrayStyles>
+          {data.project.photos.map((photo) => (
+            <SinglePhotoStyles
+              key={photo.id}
+              onClick={() => setSelected(photo)}
+            >
+              <Img fluid={photo.image.asset.fluid} alt={photo.description} />
+              {photo.id !== selected.id && <div className="layer"></div>}
+            </SinglePhotoStyles>
+          ))}
+        </PhotoArrayStyles>
+      </ProjectStyles>
+    </>
   )
 }
 
