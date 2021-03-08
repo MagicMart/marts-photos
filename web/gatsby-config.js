@@ -4,7 +4,7 @@ module.exports = {
   siteMetadata: {
     title: `Mart's Photos`,
     description: `Martin Tudor's photography website`,
-    author: `Martin Tudor`,
+    twitter: `@marttudor`,
   },
   plugins: [
     `gatsby-plugin-styled-components`,
