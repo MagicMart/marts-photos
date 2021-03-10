@@ -15,7 +15,6 @@ const AboutStyles = styled.div`
     grid-column: span 1;
   }
   p {
-    font-family: Arial, Helvetica, sans-serif;
     margin: 0;
     padding: 0 5px 5px;
   }
