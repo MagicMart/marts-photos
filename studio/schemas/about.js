@@ -25,10 +25,9 @@ export default {
       validation: (Rule) => Rule.required(),
     },
     {
-      title: 'Text',
-      name: 'text',
-      type: 'array',
-      of: [{ type: 'block' }],
+      title: 'Biography',
+      name: 'bio',
+      type: 'text',
       validation: (Rule) => Rule.required(),
     },
   ],
