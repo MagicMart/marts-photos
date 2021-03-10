@@ -16,7 +16,7 @@ module.exports = {
       options: {
         projectId: 'ufj478tq',
         dataset: 'production',
-        watchMode: process.env.NODE_ENV === 'development' ? true : false,
+        watchMode: true,
         // a token with read permissions is required
         // if you have a private dataset
         token: process.env.SANITY_TOKEN,
