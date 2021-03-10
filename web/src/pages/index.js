@@ -2,6 +2,7 @@ import React from 'react'
 import { graphql } from 'gatsby'
 import ProjectList from '../components/ProjectList'
 import SEO from '../components/seo'
+console.log('ENV', process.env.NODE_ENV)
 
 export default function Home({ data }) {
   const nodes = data.project.nodes
