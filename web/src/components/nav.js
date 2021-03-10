@@ -11,7 +11,7 @@ const NavStyles = styled.nav`
     margin: 0;
     padding: 0;
     display: grid;
-    grid-template-rows: repeat(5, auto);
+    grid-template-rows: repeat(4, auto);
     gap: 1rem;
   }
   @media (min-width: 600px) {
@@ -20,7 +20,7 @@ const NavStyles = styled.nav`
     }
     ul {
       grid-template-rows: 1fr;
-      grid-template-columns: repeat(4, auto);
+      grid-template-columns: repeat(3, auto);
     }
     button {
       display: none;
@@ -35,9 +35,6 @@ export default function Nav() {
     <NavStyles>
       {menuIsOpen && (
         <ul>
-          <li>
-            <Link to="/">Home</Link>
-          </li>
           <li>
             <Link to="/">Projects</Link>
           </li>
