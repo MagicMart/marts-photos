@@ -3,7 +3,9 @@ require('dotenv').config()
 module.exports = {
   siteMetadata: {
     title: `Mart's Photos`,
-    description: `Martin Tudor's photography website`,
+    description: `A showcase for the photos of Martin Tudor`,
+    url: `https://martsphotos.netlify.app`,
+    image: `/logo.svg`,
     twitter: `@marttudor`,
   },
   plugins: [
