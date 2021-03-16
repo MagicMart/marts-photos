@@ -34,7 +34,7 @@ export default function Home() {
     if (message && !error) {
       navigate('/contact/success')
     }
-  })
+  }, [message, error])
 
   React.useEffect(() => {
     function validateEmail(email) {
