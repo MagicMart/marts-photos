@@ -46,7 +46,9 @@ export default function Nav() {
           </li>
         </ul>
       )}
-      <button onClick={toggleMenu}>Menu</button>
+      <button onClick={toggleMenu} style={{ color: 'black' }}>
+        Menu
+      </button>
     </NavStyles>
   )
 }
