@@ -5,7 +5,6 @@ module.exports = {
     title: `Mart's Photos`,
     description: `A showcase for the photos of Martin Tudor`,
     url: `https://martsphotos.netlify.app`,
-    image: `/logo.svg`,
     twitter: `@marttudor`,
   },
   plugins: [

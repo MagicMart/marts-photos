@@ -1,7 +1,9 @@
 import React from 'react'
-import SEO from '../components/seo'
+import { navigate } from 'gatsby'
+import SEO from '../../components/seo'
 import styled from 'styled-components'
-import useForm from '../utils/useForm'
+import useForm from '../../utils/useForm'
+import useContact from '../../utils/useContact'
 
 const FormStyles = styled.form`
   margin-top: 2rem;
@@ -15,6 +17,8 @@ const FormStyles = styled.form`
 `
 
 export default function Home() {
+  const { message, error, loading, sendMessage } = useContact()
+  const [validEmail, setValidEmail] = React.useState(false)
   const { values, updateValue } = useForm({
     name: '',
     email: '',
@@ -22,9 +26,28 @@ export default function Home() {
   })
 
   function handleSubmit(event) {
-    alert(JSON.stringify(values, null, 4))
     event.preventDefault()
+    sendMessage(values)
   }
+
+  React.useEffect(() => {
+    if (message && !error) {
+      navigate('/contact/success')
+    }
+  })
+
+  React.useEffect(() => {
+    function validateEmail(email) {
+      const re = /^(([^<>()[\]\\.,;:\s@"]+(\.[^<>()[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/
+      return re.test(String(email).toLowerCase())
+    }
+    if (validateEmail(values.email)) {
+      setValidEmail(true)
+    } else {
+      setValidEmail(false)
+    }
+  }, [values.email])
+
   return (
     <>
       <SEO title="Contact" />
@@ -37,6 +60,7 @@ export default function Home() {
             name="name"
             value={values.name}
             onChange={updateValue}
+            required
           />
         </label>
         <label>
@@ -45,6 +69,7 @@ export default function Home() {
             type="email"
             name="email"
             value={values.email}
+            required
             onChange={updateValue}
           />
         </label>
@@ -53,10 +78,11 @@ export default function Home() {
           <textarea
             name="message"
             value={values.message}
+            required
             onChange={updateValue}
           />
         </label>
-        <input type="submit" value="Submit" />
+        <input disabled={loading || !validEmail} type="submit" value="Submit" />
       </FormStyles>
     </>
   )
