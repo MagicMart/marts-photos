@@ -82,7 +82,11 @@ export default function Home() {
             onChange={updateValue}
           />
         </label>
-        <input disabled={loading || !validEmail} type="submit" value="Submit" />
+        <input
+          disabled={loading || !validEmail || !values.name || !values.message}
+          type="submit"
+          value="Submit"
+        />
       </FormStyles>
     </>
   )
