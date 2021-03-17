@@ -21,12 +21,12 @@ export default function useContact() {
     })
 
     if (res.status >= 400 && res.status < 600) {
-      setLoading(false) // turn off loading
       setError('There was a problem with your submission')
+      setLoading(false) // turn off loading
     } else {
       // it worked!
-      setLoading(false)
       setMessage('Your message was submitted.')
+      setLoading(false)
     }
   }
 
