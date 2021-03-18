@@ -2,7 +2,7 @@ import React from 'react'
 import { navigate } from 'gatsby'
 import SEO from '../../components/seo'
 import styled from 'styled-components'
-import useForm from '../../utils/useForm'
+import useForm, { validateEmail } from '../../utils/useForm'
 import useContact from '../../utils/useContact'
 
 const FormStyles = styled.form`
@@ -41,10 +41,6 @@ export default function Home() {
   }, [message, error])
 
   React.useEffect(() => {
-    function validateEmail(email) {
-      const re = /^(([^<>()[\]\\.,;:\s@"]+(\.[^<>()[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/
-      return re.test(String(email).toLowerCase())
-    }
     if (validateEmail(values.email)) {
       setValidEmail(true)
     } else {
