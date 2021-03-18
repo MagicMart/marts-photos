@@ -25,7 +25,7 @@ export default function useContact() {
       body: JSON.stringify(body),
     })
 
-    if (true || (res.status >= 400 && res.status < 600)) {
+    if (res.status >= 400 && res.status < 600) {
       setError('There was a problem with your submission')
       setLoading(false) // turn off loading
     } else {
