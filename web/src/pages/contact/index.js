@@ -17,7 +17,7 @@ const FormStyles = styled.form`
 `
 
 export default function Home() {
-  const { message, error, loading, sendMessage } = useContact()
+  const { message, error, loading, sendMessage, clearError } = useContact()
   const [validEmail, setValidEmail] = React.useState(false)
   const { values, updateValue } = useForm({
     name: '',
@@ -32,6 +32,15 @@ export default function Home() {
 
   function handleValue(e) {
     updateValue({ [e.target.name]: e.target.value })
+  }
+
+  function clear() {
+    updateValue({
+      name: '',
+      email: '',
+      message: '',
+    })
+    clearError()
   }
 
   React.useEffect(() => {
@@ -82,11 +91,18 @@ export default function Home() {
             onChange={handleValue}
           />
         </label>
-        <input
-          disabled={loading || !validEmail || !values.name || !values.message}
-          type="submit"
-          value="Submit"
-        />
+        {error ? (
+          <p>
+            There was a problem with your submission!{' '}
+            <button onClick={clear}>X</button>
+          </p>
+        ) : (
+          <input
+            disabled={loading || !validEmail || !values.name || !values.message}
+            type="submit"
+            value="Submit"
+          />
+        )}
       </FormStyles>
     </>
   )

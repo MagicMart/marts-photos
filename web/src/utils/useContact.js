@@ -7,6 +7,11 @@ export default function useContact() {
 
   const url = 'https://5kqlyfkif7.execute-api.eu-west-2.amazonaws.com/prod'
 
+  function clearError() {
+    setError()
+    setMessage('')
+  }
+
   async function sendMessage(body) {
     setLoading(true)
     setMessage('')
@@ -20,7 +25,7 @@ export default function useContact() {
       body: JSON.stringify(body),
     })
 
-    if (res.status >= 400 && res.status < 600) {
+    if (true || (res.status >= 400 && res.status < 600)) {
       setError('There was a problem with your submission')
       setLoading(false) // turn off loading
     } else {
@@ -30,5 +35,5 @@ export default function useContact() {
     }
   }
 
-  return { error, loading, message, sendMessage }
+  return { error, loading, message, sendMessage, clearError }
 }
