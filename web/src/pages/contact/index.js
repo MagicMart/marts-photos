@@ -30,6 +30,10 @@ export default function Home() {
     sendMessage(values)
   }
 
+  function handleValue(e) {
+    updateValue({ [e.target.name]: e.target.value })
+  }
+
   React.useEffect(() => {
     if (message && !error) {
       navigate('/contact/success')
@@ -59,7 +63,7 @@ export default function Home() {
             type="text"
             name="name"
             value={values.name}
-            onChange={updateValue}
+            onChange={handleValue}
             required
           />
         </label>
@@ -70,7 +74,7 @@ export default function Home() {
             name="email"
             value={values.email}
             required
-            onChange={updateValue}
+            onChange={handleValue}
           />
         </label>
         <label>
@@ -79,7 +83,7 @@ export default function Home() {
             name="message"
             value={values.message}
             required
-            onChange={updateValue}
+            onChange={handleValue}
           />
         </label>
         <input
