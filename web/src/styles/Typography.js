@@ -6,6 +6,7 @@ const Typography = createGlobalStyle`
   @font-face {
     font-family: SilkRemington;
     src: url(${font});
+    font-display: swap;
   }
   html {
     font-family: SilkRemington, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
