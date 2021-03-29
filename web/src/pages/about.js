@@ -14,15 +14,16 @@ const AboutStyles = styled.div`
     font-size: 2rem;
     grid-column: span 1;
   }
-  p {
-    margin: 0;
-    padding: 0 5px 5px;
-  }
+
   @media (min-width: 600px) {
     grid-template-columns: 1fr 1fr;
     grid-template-rows: auto auto;
     h2 {
       grid-column: span 2;
+    }
+    p {
+      margin: 0;
+      padding: 0;
     }
   }
 `
