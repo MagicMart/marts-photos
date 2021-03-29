@@ -10,9 +10,9 @@ const StyledHeader = styled.header`
   grid-template-columns: 1fr;
   h1 {
     display: grid;
-    grid-template-areas: 
-      "firstname"
-      "surname";
+    grid-template-areas:
+      'firstname'
+      'surname';
     font-size: 2.5rem;
     width: fit-content;
     margin: 0 auto;
@@ -22,7 +22,7 @@ const StyledHeader = styled.header`
   }
   .surname {
     grid-area: surname;
-    letter-spacing: 0.15em;
+    letter-spacing: 0.09em;
   }
   @media (min-width: 600px) {
     & {
