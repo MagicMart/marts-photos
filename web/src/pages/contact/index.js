@@ -94,7 +94,7 @@ export default function Home() {
         {error ? (
           <p>
             There was a problem with your submission!{' '}
-            <button onClick={clear}>X</button>
+            <button onClick={clear}>&times;</button>
           </p>
         ) : (
           <input
