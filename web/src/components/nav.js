@@ -3,7 +3,7 @@ import { Link } from 'gatsby'
 import styled from 'styled-components'
 
 const NavStyles = styled.nav`
-  margin: 3rem auto 3rem;
+  margin: 1.5rem auto 3rem;
   /* text-align: center; */
   font-size: 1.75rem;
   ul {
