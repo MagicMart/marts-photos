@@ -12,10 +12,12 @@ const StyledHeader = styled.header`
     display: grid;
     grid-template-areas:
       'firstname'
-      'surname';
+      'surname'
+      'photos';
     font-size: 2.5rem;
     width: fit-content;
     margin: 0 auto;
+    padding: 0;
   }
   .firstname {
     grid-area: firstname;
@@ -23,6 +25,12 @@ const StyledHeader = styled.header`
   .surname {
     grid-area: surname;
     letter-spacing: 0.09em;
+  }
+  .photos {
+    grid-area: photos;
+    font-size: 0.45em;
+    background: white;
+    text-align: right;
   }
   @media (min-width: 600px) {
     & {
@@ -41,6 +49,7 @@ const Header = ({ siteTitle }) => (
     <h1 className="tilt mark">
       <span className="firstname">Martin</span>
       <span className="surname">Tudor</span>
+      <span className="photos">Photos</span>
     </h1>
     <Nav />
   </StyledHeader>
