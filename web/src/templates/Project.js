@@ -47,15 +47,17 @@ export default function SingleProject({ data }) {
     <>
       <SEO title={data.project.name} />
       <ProjectStyles>
-        <SelectedStyles>
+        <SelectedStyles tabIndex="0">
           <h2 className="mark">{data.project.name}</h2>
           <Img fluid={selected.image.asset.fluid} alt={selected.description} />
         </SelectedStyles>
-        <PhotoArrayStyles>
+        <PhotoArrayStyles role="list">
           {data.project.photos.map((photo) => (
             <SinglePhotoStyles
+              role="listitem"
               key={photo.id}
               onClick={() => setSelected(photo)}
+              tabIndex="0"
             >
               <Img fluid={photo.image.asset.fluid} alt={photo.description} />
               {photo.id !== selected.id && <div className="layer"></div>}

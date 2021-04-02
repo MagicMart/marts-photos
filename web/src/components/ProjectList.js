@@ -35,7 +35,7 @@ function SingleProject({ projects }) {
         const id = project.id
         const slug = project.slug.current
         return (
-          <SingleProjectStyles key={id}>
+          <SingleProjectStyles role="listitem" key={id} tabIndex="0">
             <Link className="mark" to={`/project/${slug}`}>
               <h2>{name}</h2>
             </Link>
@@ -52,7 +52,7 @@ function SingleProject({ projects }) {
 
 export default function ProjectList({ projects }) {
   return (
-    <ProjectListStyles>
+    <ProjectListStyles role="list">
       <SingleProject projects={projects} />
     </ProjectListStyles>
   )
