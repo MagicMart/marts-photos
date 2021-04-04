@@ -3,9 +3,11 @@ require('dotenv').config()
 module.exports = {
   siteMetadata: {
     title: `Mart's Photos`,
-    description: `A showcase for the photos of Martin Tudor`,
-    url: `https://martsphotos.netlify.app`,
-    twitter: `@marttudor`,
+    titleTemplate: `%s - Mart's Photos`,
+    description: `A demo photography portfolio`,
+    url: `https://photos.martintudor.com`,
+    image: `/logo.svg`,
+    twitterUsername: `@marttudor`,
   },
   plugins: [
     `gatsby-plugin-styled-components`,
