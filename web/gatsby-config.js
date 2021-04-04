@@ -6,8 +6,8 @@ module.exports = {
     titleTemplate: `%s - Mart's Photos`,
     description: `A demo photography portfolio`,
     url: `https://photos.martintudor.com`,
-    image: `/logo.svg`,
-    twitterUsername: `@marttudor`,
+    image: `/martsphotos.jpg`,
+    twitterUsername: `@martintudoruk`,
   },
   plugins: [
     `gatsby-plugin-styled-components`,
