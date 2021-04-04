@@ -2,11 +2,11 @@ require('dotenv').config()
 
 module.exports = {
   siteMetadata: {
-    title: `Mart's Photos`,
+    defaultTitle: `Mart's Photos`,
     titleTemplate: `%s - Mart's Photos`,
-    description: `A demo photography portfolio`,
-    url: `https://photos.martintudor.com`,
-    image: `/martsphotos.jpg`,
+    defaultDescription: `A demo photography portfolio`,
+    siteUrl: `https://photos.martintudor.com`,
+    defaultImage: `/martsphotos.jpg`,
     twitterUsername: `@martintudoruk`,
   },
   plugins: [
