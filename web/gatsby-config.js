@@ -14,6 +14,7 @@ module.exports = {
     `gatsby-plugin-react-helmet`,
     `gatsby-transformer-sharp`,
     `gatsby-plugin-sharp`,
+    `gatsby-plugin-force-trailing-slashes`,
     {
       resolve: 'gatsby-source-sanity',
       options: {
